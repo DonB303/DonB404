@@ -1,0 +1,234 @@
+/* Grundlegendes Styling für die Website */
+body {
+    background-color: #dcdcdc; /* Heller Grauton als Hintergrund */
+    color: #000000;           /* Schwarzer Text */
+    margin: 0;
+    font-family: 'Tahoma', sans-serif; /* Klassische Windows-Schrift */
+}
+
+/* Desktop Styling */
+#desktop {
+    display: flex;
+    flex-direction: column;  /* Icons vertikal ausrichten */
+    align-items: flex-start; /* Am linken Rand ausrichten */
+    gap: 20px;               /* Abstand zwischen den Icons */
+    padding: 20px;
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 40px); /* Platz für die Taskleiste */
+    overflow: hidden;
+    background-color: #dcdcdc; /* Einheitlicher Hintergrund */
+}
+
+/* Icon Styling */
+.icon {
+    display: flex;
+    flex-direction: column; /* Text unter das Bild setzen */
+    align-items: center;
+    text-align: center;
+    width: 80px; 
+    cursor: pointer;
+    transition: transform 0.2s;
+    color: #000000; /* Textfarbe */
+}
+
+.icon img {
+    width: 64px; 
+    height: 64px;
+    image-rendering: pixelated; /* Scharfe Darstellung für Pixel-Art */
+    background-color: transparent;
+}
+
+.icon:hover {
+    transform: scale(1.1); /* Leichte Vergrößerung beim Hovern */
+}
+
+/* Taskbar Styling */
+#taskbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #c4c4c4; /* Dunklerer Grauton für die Taskleiste */
+    display: flex;
+    align-items: center;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Start Button */
+#start-button {
+    width: 40px; /* Breite des Start-Buttons */
+    height: 40px; /* Höhe des Start-Buttons */
+    border: none;
+    cursor: pointer;
+    background: none; /* Hintergrund entfernen */
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Bild für den Start-Button */
+#start-button img {
+    width: 100%; /* Volle Breite des Buttons */
+    height: 100%; /* Volle Höhe des Buttons */
+    image-rendering: pixelated; /* Pixel-Perfektion */
+    image-rendering: crisp-edges; /* Alternative */
+}
+#start-button:hover {
+    transform: scale(1.1); /* Leichtes Vergrößern */
+}
+
+/* Start Menu */
+#start-menu {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    background-color: #dcdcdc; /* Hintergrundfarbe für das Menü */
+    border: 2px solid #c4c4c4; /* Rahmen in Hellgrau */
+    width: 200px;
+    display: none; /* Standardmäßig ausgeblendet */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#start-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#start-menu li {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #000000; /* Schwarzer Text */
+    background-color: #dcdcdc; /* Hintergrundfarbe */
+    border-bottom: 1px solid #c4c4c4;
+}
+
+#start-menu li:hover {
+    background-color: #c4c4c4; /* Hellgraues Hover */
+    color: #000000;
+}
+
+/* Fenster Styling */
+.window {
+    display: none;
+    position: absolute;
+    width: 300px;
+    background: #dcdcdc;
+    border: 2px solid #000000; /* Schwarzer Rahmen */
+    z-index: 10;
+}
+
+.title-bar {
+    background: #c4c4c4; /* Hellgraue Titelzeile */
+    color: #000000;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: grab;
+}
+
+.title-bar .controls button {
+    background: #dcdcdc;
+    border: none;
+    padding: 2px 5px;
+    cursor: pointer;
+}
+
+.content {
+    padding: 10px;
+    color: #000000; /* Textfarbe im Fenster */
+}
+
+/* Runde Buttons (falls gewünscht) */
+#start-button {
+    border-radius: 10px; 
+    overflow: hidden; /* Verhindert, dass Inhalte über die Rundung hinausgehen */
+}
+
+/* Chat Box Styling */
+.chat-box {
+    width: 100%;
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #c4c4c4;
+    padding: 10px;
+    background-color: #f0f0f0;
+    margin-bottom: 10px;
+    font-family: 'Tahoma', sans-serif;
+  }
+  
+  .chat-box p {
+    margin: 5px 0;
+  }
+  
+  .chat-input {
+    width: 80%;
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #c4c4c4;
+  }
+  
+  button {
+    background-color: #c4c4c4;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #dcdcdc;
+  }
+  
+
+/* Gallery Styling */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    border: 2px solid #c4c4c4;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .gallery-item img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Full Image Viewer */
+  #full-image-viewer {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  #full-image-viewer img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+  
+  #full-image-viewer .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #c4c4c4;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  

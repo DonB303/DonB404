@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro-PC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Desktop -->
+  <div id="desktop">
+    <!-- Icons -->
+    <div class="icon" ondblclick="openWindow('gallery')">
+      <img src="assets/icons/gallery.png" alt="Gallery">
+      <p>Galerie</p>
+    </div>
+    <div class="icon" ondblclick="openWindow('chat')">
+      <img src="assets/icons/chat.png" alt="Chat">
+      <p>Chat</p>
+    </div>
+  </div>
+
+  <!-- Taskbar -->
+  <div id="taskbar">
+    <button id="start-button" onclick="toggleStartMenu()">
+      <img src="assets/icons/start.png" alt="Start">
+    </button>
+    <div id="start-menu">
+      <ul>
+        <li onclick="openWindow('gallery')">Galerie</li>
+        <li onclick="openWindow('chat')">Chat</li>
+        <li onclick="openWindow('about')">Über mich</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Chat Window -->
+<div class="window" id="chat">
+    <div class="title-bar">
+      <span>Chat</span>
+      <div class="controls">
+        <button onclick="minimizeWindow('chat')">_</button>
+        <button onclick="closeWindow('chat')">X</button>
+      </div>
+    </div>
+    <div class="content">
+      <div id="chat-box" class="chat-box">
+        <!-- Nachrichten erscheinen hier -->
+      </div>
+      <input type="text" id="chat-input" class="chat-input" placeholder="Nachricht eingeben..." />
+      <button onclick="sendMessage()">Senden</button>
+    </div>
+  </div>
+  
+<!-- Galerie Window -->
+<div class="window" id="gallery">
+    <div class="title-bar">
+      <span>Galerie</span>
+      <div class="controls">
+        <button onclick="minimizeWindow('gallery')">_</button>
+        <button onclick="closeWindow('gallery')">X</button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="assets/images/pic1.jpg" alt="Bild 1" onclick="viewImage('assets/images/pic1.jpg')">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/pic2.jpg" alt="Bild 2" onclick="viewImage('assets/images/pic2.jpg')">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/pic3.jpg" alt="Bild 3" onclick="viewImage('assets/images/pic3.jpg')">
+        </div>
+        <!-- Mehr Bilder können hier hinzugefügt werden -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- Windows -->
+  <div class="window" id="gallery">
+    <div class="title-bar">
+      <span>Galerie</span>
+      <div class="controls">
+        <button onclick="minimizeWindow('gallery')">_</button>
+        <button onclick="closeWindow('gallery')">X</button>
+      </div>
+    </div>
+    <div class="content">Hier kommt die Galerie rein.</div>
+  </div>
+
+  <div class="window" id="chat">
+    <div class="title-bar">
+      <span>Chat</span>
+      <div class="controls">
+        <button onclick="minimizeWindow('chat')">_</button>
+        <button onclick="closeWindow('chat')">X</button>
+      </div>
+    </div>
+    <div class="content">Hier kommt der Chat rein.</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
