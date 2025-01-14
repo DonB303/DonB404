@@ -104,4 +104,24 @@ function sendMessage() {
   function closeWindow(windowId) {
     document.getElementById(windowId).style.display = 'none';
   }
+
+  
+  function sendMessage() {
+    const messageInput = document.getElementById("chat-message");
+    const chatOutput = document.getElementById("chat-output");
+    const message = messageInput.value.trim();
+  
+    if (message !== "") {
+      const newMessage = document.createElement("div");
+      newMessage.textContent = message;
+      chatOutput.appendChild(newMessage);
+      messageInput.value = "";
+      chatOutput.scrollTop = chatOutput.scrollHeight; // Automatisch nach unten scrollen
+    }
+  }
+  
+  function clearChat() {
+    const chatOutput = document.getElementById("chat-output");
+    chatOutput.innerHTML = ""; // Alle Nachrichten entfernen
+  }
   
